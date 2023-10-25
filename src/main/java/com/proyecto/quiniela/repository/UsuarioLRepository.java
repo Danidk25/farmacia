@@ -11,5 +11,7 @@ import com.proyecto.quiniela.entity.UsuarioL;
 public interface UsuarioLRepository extends JpaRepository<UsuarioL, Serializable>{
     List<UsuarioL> findByNombreusuarioAndPassword(String nombreusuario, String password);
     List<UsuarioL> findByIdusuario(Integer idusuario);
+    List<UsuarioL> findAllByOrderByIdusuarioAsc();
+
     
 }

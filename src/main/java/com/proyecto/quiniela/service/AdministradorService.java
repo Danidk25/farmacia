@@ -45,6 +45,11 @@ public class AdministradorService {
 		return usuarioLRepository.findAll();
 	}
 
+			@GetMapping(path = "/busuarioasc")//ABC -> C -> consultar usuarios login
+	public List<UsuarioL> busuarioasc(){
+		return usuarioLRepository.findAllByOrderByIdusuarioAsc();
+	}
+
 	@PostMapping(path ="/ausuario")//ABC -> A -> Agregar Usuario login
 	public UsuarioL ausurio(@RequestBody UsuarioL usuarioL ) {
 		return usuarioLRepository.save(usuarioL);	
