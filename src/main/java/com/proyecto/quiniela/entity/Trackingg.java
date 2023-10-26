@@ -18,4 +18,25 @@ public class Trackingg implements Serializable {
 	@Basic(optional = false)
     @Column(name = "codigotracking")
 	private Integer codigotracking;
+
+@Column(name = "detalletracking")
+	private Integer detalletracking;
+
+public Integer getCodigotracking() {
+    return codigotracking;
+}
+
+public void setCodigotracking(Integer codigotracking) {
+    this.codigotracking = codigotracking;
+}
+
+public Integer getDetalletracking() {
+    return detalletracking;
+}
+
+public void setDetalletracking(Integer detalletracking) {
+    this.detalletracking = detalletracking;
+}
+
+    
 }

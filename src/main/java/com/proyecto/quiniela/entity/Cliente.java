@@ -1,6 +1,7 @@
 package com.proyecto.quiniela.entity;
 import java.io.Serializable;
 
+import java.sql.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -18,4 +19,35 @@ public class Cliente implements Serializable {
 	@Basic(optional = false)
     @Column(name = "codigocliente")
 	private Integer codigocliente;
+    
+    @Column(name = "fecharegistro")
+    private Date fecharegistro;
+
+    @Column(name ="codigopersona")
+    private Integer codigopersona;
+
+    public Integer getCodigocliente() {
+        return codigocliente;
+    }
+
+    public void setCodigocliente(Integer codigocliente) {
+        this.codigocliente = codigocliente;
+    }
+
+    public Date getFecharegistro() {
+        return fecharegistro;
+    }
+
+    public void setFecharegistro(Date fecharegistro) {
+        this.fecharegistro = fecharegistro;
+    }
+
+    public Integer getCodigopersona() {
+        return codigopersona;
+    }
+
+    public void setCodigopersona(Integer codigopersona) {
+        this.codigopersona = codigopersona;
+    }
+
 }
