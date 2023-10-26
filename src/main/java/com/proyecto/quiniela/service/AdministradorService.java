@@ -65,6 +65,31 @@ public class AdministradorService {
 			usuarioLRepository.delete(usuarioL.get());
 		}
 	}
+	// CONSULTAS PARA PERSONA
+
+
+	  @GetMapping(path = "/bpersona") // ABC -> C -> consultar persona
+	public List<Persona> bpersona() {
+		return personaRepository.findAll();
+	}
+
+	@GetMapping(path = "/bpersonaasc") // ABC -> C -> consultar persona
+	public List<Persona> bpersonaasc() {
+		return personaRepository.findAllByOrderByCodigopersonaAsc();
+	}
+ 
+	@PostMapping(path = "/apersona") // ABC -> A -> Agregar persona
+	public Persona apersona(@RequestBody Persona persona) {
+		return personaRepository.save(persona);
+	}
+
+	@DeleteMapping(path = "/eliminarpers/{codigopersona}") // ABC -> B ->Borrar persona
+	public void eliminarper(@PathVariable("codigopersona") int codigopersona) {
+		Optional<Persona> persona = personaRepository.findById(codigopersona);
+		if (persona.isPresent()) {
+			personaRepository.delete(persona.get());
+		}
+	}  
 
 /* 	// CONSULTAS PARA CLIENTE
 
@@ -97,33 +122,6 @@ public class AdministradorService {
 	return clienteRepository.findByCodigopersona(codigopersona);
 	} */
 	
-	// CONSULTAS PARA PERSONA
-
-
-	  @GetMapping(path = "/bpersona") // ABC -> C -> consultar persona
-	public List<Persona> bpersona() {
-		return personaRepository.findAll();
-	}
-
-	@GetMapping(path = "/bpersonaasc") // ABC -> C -> consultar persona
-	public List<Persona> bpersonaasc() {
-		return personaRepository.findAllByOrderByCodigopersonaAsc();
-	}
- 
-	@PostMapping(path = "/apersona") // ABC -> A -> Agregar persona
-	public Persona apersona(@RequestBody Persona persona) {
-		return personaRepository.save(persona);
-	}
-
-	@DeleteMapping(path = "/eliminarpers/{codigopersona}") // ABC -> B ->Borrar persona
-	public void eliminarper(@PathVariable("codigopersona") int codigopersona) {
-		Optional<Persona> persona = personaRepository.findById(codigopersona);
-		if (persona.isPresent()) {
-			personaRepository.delete(persona.get());
-		}
-	}  
-
-
 
 
 
