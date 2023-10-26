@@ -19,7 +19,7 @@ public class Trackingg implements Serializable {
     @Column(name = "codigotracking")
 	private Integer codigotracking;
 
-@Column(name = "detalletracking")
+    @Column(name = "detalletracking")
 	private Integer detalletracking;
 
 public Integer getCodigotracking() {
