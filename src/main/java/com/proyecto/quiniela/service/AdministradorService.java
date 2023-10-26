@@ -13,9 +13,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.proyecto.quiniela.entity.Cliente;
 import com.proyecto.quiniela.entity.UsuarioL;
-import com.proyecto.quiniela.entity.persona;
+import com.proyecto.quiniela.entity.Persona;
 import com.proyecto.quiniela.repository.ClienteRepository;
 import com.proyecto.quiniela.repository.PersonaRepository;
 import com.proyecto.quiniela.repository.UsuarioLRepository;
@@ -67,7 +66,7 @@ public class AdministradorService {
 		}
 	}
 
-	// CONSULTAS PARA CLIENTE
+/* 	// CONSULTAS PARA CLIENTE
 
 	  @GetMapping(path = "/bcliente") // ABC -> C -> consultar clientes
 	public List<Cliente> bcliente() {
@@ -90,29 +89,35 @@ public class AdministradorService {
 		if (cliente.isPresent()) {
 			clienteRepository.delete(cliente.get());
 		}
-	}  
+	}   */
+
+	//mapeo
+	/* @GetMapping(path = "/buscar/id/{codigopersona}")
+	public List<Cliente> clientesbuscar(@PathVariable("codigopersona") Integer codigopersona){
+	return clienteRepository.findByCodigopersona(codigopersona);
+	} */
 	
 	// CONSULTAS PARA PERSONA
 
 
 	  @GetMapping(path = "/bpersona") // ABC -> C -> consultar persona
-	public List<persona> bpersona() {
+	public List<Persona> bpersona() {
 		return personaRepository.findAll();
 	}
 
 	@GetMapping(path = "/bpersonaasc") // ABC -> C -> consultar persona
-	public List<persona> bpersonaasc() {
+	public List<Persona> bpersonaasc() {
 		return personaRepository.findAllByOrderByCodigopersonaAsc();
 	}
-
+ 
 	@PostMapping(path = "/apersona") // ABC -> A -> Agregar persona
-	public persona apersona(@RequestBody persona persona) {
+	public Persona apersona(@RequestBody Persona persona) {
 		return personaRepository.save(persona);
 	}
 
 	@DeleteMapping(path = "/eliminarpers/{codigopersona}") // ABC -> B ->Borrar persona
 	public void eliminarper(@PathVariable("codigopersona") int codigopersona) {
-		Optional<persona> persona = personaRepository.findById(codigopersona);
+		Optional<Persona> persona = personaRepository.findById(codigopersona);
 		if (persona.isPresent()) {
 			personaRepository.delete(persona.get());
 		}

@@ -6,14 +6,12 @@ import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import java.util.List;
 
 
 @Entity
 @Table(name = "persona")
-public class persona implements Serializable{
+public class Persona implements Serializable{
 
         private static final long serialVersionUID = 13L;
 
@@ -57,7 +55,7 @@ public class persona implements Serializable{
 	private Date fechanacimiento;
 
     @Column(name = "correo")
-	private Integer correo;
+	private String correo;
 
     @Column(name = "direccion")
 	private String direccion;
@@ -67,17 +65,6 @@ public class persona implements Serializable{
 
     @Column(name = "nombrepais")
 	private String nombrepais;
-
-    @OneToMany(mappedBy = "codigopersona")
-    public List<Cliente> clientelist;
-
-    public List<Cliente> getClientelist() {
-        return clientelist;
-    }
-
-    public void setClientelist(List<Cliente> clientelist) {
-        this.clientelist = clientelist;
-    }
 
     public Integer getCodigopersona() {
         return codigopersona;
@@ -175,11 +162,11 @@ public class persona implements Serializable{
         this.fechanacimiento = fechanacimiento;
     }
 
-    public Integer getCorreo() {
+    public String getCorreo() {
         return correo;
     }
 
-    public void setCorreo(Integer correo) {
+    public void setCorreo(String correo) {
         this.correo = correo;
     }
 
@@ -207,8 +194,6 @@ public class persona implements Serializable{
         this.nombrepais = nombrepais;
     }
 
-   
+
     
-
-
 }
