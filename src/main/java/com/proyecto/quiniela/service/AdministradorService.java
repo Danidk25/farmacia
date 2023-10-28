@@ -16,9 +16,13 @@ import org.springframework.web.bind.annotation.RestController;
 import com.proyecto.quiniela.entity.UsuarioL;
 import com.proyecto.quiniela.entity.Persona;
 import com.proyecto.quiniela.entity.Cliente;
+//import com.proyecto.quiniela.entity.Empleado;
+//import com.proyecto.quiniela.entity.Proveedor;
 import com.proyecto.quiniela.repository.UsuarioLRepository;
 import com.proyecto.quiniela.repository.PersonaRepository;
+import com.proyecto.quiniela.repository.ProveedorRepository;
 import com.proyecto.quiniela.repository.ClienteRepository;
+import com.proyecto.quiniela.repository.EmpleadoRepository;
 
 
 
@@ -32,6 +36,10 @@ public class AdministradorService {
 	PersonaRepository personaRepository;
 	@Autowired
 	ClienteRepository clienteRepository;
+	@Autowired
+	EmpleadoRepository empleadoRepository;
+	@Autowired
+	ProveedorRepository proveedorRepository;
 
 	
 
@@ -121,15 +129,62 @@ public class AdministradorService {
 		}
 	}   
 
-	//mapeo para relacion OneToMany
-	/* @GetMapping(path = "/buscar/id/{codigopersona}")
+/* 	//mapeo para relacion OneToMany
+	@GetMapping(path = "/buscar/id/{codigopersona}")
 	public List<Cliente> clientesbuscar(@PathVariable("codigopersona") Integer codigopersona){
 	return clienteRepository.findByCodigopersona(codigopersona);
-	} */
+	}  */
 	
 
+/* 		// CONSULTAS PARA EMPLEADO
 
+	 @GetMapping(path = "/bempleado") // ABC -> C -> consultar Empleado
+	public List<Empleado> bempleado() {
+		return empleadoRepository.findAll();
+	}
 
+	@GetMapping(path = "/bempleadoasc") // ABC -> C -> consultar Empleado
+	public List<Empleado> bempleadoasc() {
+		return empleadoRepository.findAllByOrderByCodigoEmpleadoAsc();
+	}
+
+	@PostMapping(path = "/aempleado") // ABC -> A -> Agregar Empleado
+	public Empleado aempleado(@RequestBody Empleado empleado) {
+		return empleadoRepository.save(empleado);
+	}
+
+	@DeleteMapping(path = "/eliminaremp/{codigoempleado}") // ABC -> B ->Borrar empleado
+	public void eliminaremp(@PathVariable("codigoempleado") int codigoempleado) {
+		Optional<Empleado> empleado = empleadoRepository.findById(codigoempleado);
+		if (empleado.isPresent()) {
+			empleadoRepository.delete(empleado.get());
+		}
+	}   
+
+// CONSULTAS PARA PROVEEDOR
+ 	  @GetMapping(path = "/bproveedor") // ABC -> C -> consultar clientes
+	public List<Proveedor> bproveedor() {
+		return proveedorRepository.findAll();
+	}
+
+	@GetMapping(path = "/bproveedorasc") // ABC -> C -> consultar clientes
+	public List<Proveedor> bproveedorasc() {
+		return proveedorRepository.findAllByOrderByCodigoproveedorAsc();
+	}
+
+	@PostMapping(path = "/aproveedor") // ABC -> A -> Agregar Cliente
+	public Proveedor aproveedor(@RequestBody Proveedor proveedor) {
+		return proveedorRepository.save(proveedor);
+	}
+
+	@DeleteMapping(path = "/eliminarprov/{codigoproveedor}") // ABC -> B ->Borrar Cliente
+	public void eliminarprov(@PathVariable("codigoproveedor") int codigoproveedor) {
+		Optional<Proveedor> proveedor = proveedorRepository.findById(codigoproveedor);
+		if (proveedor.isPresent()) {
+			proveedorRepository.delete(proveedor.get());
+		}
+	}   
+ */
 
 
 

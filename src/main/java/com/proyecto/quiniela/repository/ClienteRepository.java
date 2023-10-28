@@ -16,5 +16,5 @@ public interface ClienteRepository  extends JpaRepository<Cliente, Serializable>
    List<Cliente> findAllByOrderByCodigocliente();
    List<Cliente> findAllByOrderByCodigoclienteAsc();
    List<Cliente> findByCodigocliente(Integer codigocliente);
-   List<Cliente> findByCodigopersona(Integer codigopersona);
+ //  List<Cliente> findByCodigopersona(Integer codigopersona);
 }

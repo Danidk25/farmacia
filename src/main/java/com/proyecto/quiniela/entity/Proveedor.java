@@ -6,6 +6,8 @@ import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+//import javax.persistence.JoinColumn;
+//import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 
@@ -23,8 +25,9 @@ public class Proveedor implements Serializable {
     @Column(name = "fechaproveedor")
 	private Date fechaproveedor;
     
-    @Column(name = "codigopersona")
-	private Integer codigopersona;
+   /*  @ManyToOne
+    @JoinColumn(name = "codigopersona")
+    private Persona persona; */
 
 
     public Integer getCodigoproveedor() {
@@ -43,13 +46,7 @@ public class Proveedor implements Serializable {
         this.fechaproveedor = fechaproveedor;
     }
 
-    public Integer getCodigopersona() {
-        return codigopersona;
-    }
-
-    public void setCodigopersona(Integer codigopersona) {
-        this.codigopersona = codigopersona;
-    }
+ 
 
     
 }
