@@ -15,9 +15,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.proyecto.quiniela.entity.UsuarioL;
 import com.proyecto.quiniela.entity.Persona;
-import com.proyecto.quiniela.repository.ClienteRepository;
-import com.proyecto.quiniela.repository.PersonaRepository;
+import com.proyecto.quiniela.entity.Cliente;
 import com.proyecto.quiniela.repository.UsuarioLRepository;
+import com.proyecto.quiniela.repository.PersonaRepository;
+import com.proyecto.quiniela.repository.ClienteRepository;
+
+
 
 @RestController
 @RequestMapping("/proyecto")
@@ -26,9 +29,9 @@ public class AdministradorService {
 	@Autowired
 	UsuarioLRepository usuarioLRepository;
 	@Autowired
-	ClienteRepository clienteRepository;
-	@Autowired
 	PersonaRepository personaRepository;
+	@Autowired
+	ClienteRepository clienteRepository;
 
 	// USUARIOS PARA EL LOGIN PROYECTO BD 1
 	@PostMapping(path = "/loginul") // ABC -> A -> AgregarAdm LoginBueno para UsuarioL
@@ -91,7 +94,7 @@ public class AdministradorService {
 		}
 	}  
 
-/* 	// CONSULTAS PARA CLIENTE
+	// CONSULTAS PARA CLIENTE
 
 	  @GetMapping(path = "/bcliente") // ABC -> C -> consultar clientes
 	public List<Cliente> bcliente() {
@@ -114,9 +117,9 @@ public class AdministradorService {
 		if (cliente.isPresent()) {
 			clienteRepository.delete(cliente.get());
 		}
-	}   */
+	}   
 
-	//mapeo
+	//mapeo para relacion OneToMany
 	/* @GetMapping(path = "/buscar/id/{codigopersona}")
 	public List<Cliente> clientesbuscar(@PathVariable("codigopersona") Integer codigopersona){
 	return clienteRepository.findByCodigopersona(codigopersona);
