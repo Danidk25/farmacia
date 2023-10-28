@@ -33,6 +33,8 @@ public class AdministradorService {
 	@Autowired
 	ClienteRepository clienteRepository;
 
+	
+
 	// USUARIOS PARA EL LOGIN PROYECTO BD 1
 	@PostMapping(path = "/loginul") // ABC -> A -> AgregarAdm LoginBueno para UsuarioL
 	public UsuarioL loginul(@RequestBody UsuarioL usuarioL) {

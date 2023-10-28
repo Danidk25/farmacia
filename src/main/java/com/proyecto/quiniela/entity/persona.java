@@ -73,6 +73,14 @@ public class Persona implements Serializable{
     private List<Cliente> clientes;
 
     
+    public List<Cliente> getClientes() {
+        return clientes;
+    }
+
+    public void setClientes(List<Cliente> clientes) {
+        this.clientes = clientes;
+    }
+
     public Integer getCodigopersona() {
         return codigopersona;
     }
