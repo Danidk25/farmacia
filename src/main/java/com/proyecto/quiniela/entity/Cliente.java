@@ -25,9 +25,21 @@ public class Cliente implements Serializable {
     @Column(name = "fecharegistro")
     private Date fecharegistro;
 
-    @Column(name ="codigopersona")
-    private Integer codigopersona; 
+   /*  @Column(name ="codigopersona")
+    private Integer codigopersona;  */
 
+    @ManyToOne
+    @JoinColumn(name = "codigopersona")
+    private Persona persona;
+
+
+    public Persona getPersona() {
+        return persona;
+    }
+
+    public void setPersona(Persona persona) {
+        this.persona = persona;
+    }
 
     public Integer getCodigocliente() {
         return codigocliente;
