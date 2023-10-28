@@ -2,13 +2,12 @@ package com.proyecto.quiniela.entity;
 import java.io.Serializable;
 
 import java.util.Date;
-import java.util.List;
+
 
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 
@@ -69,17 +68,7 @@ public class Persona implements Serializable{
     @Column(name = "nombrepais")
 	private String nombrepais;
 
-    @OneToMany(mappedBy = "codigopersona")
-    private List<Cliente> clientes;
-
-    public List<Cliente> getClientes() {
-        return clientes;
-    }
-
-    public void setClientes(List<Cliente> clientes) {
-        this.clientes = clientes;
-    }
-
+  
     public Integer getCodigopersona() {
         return codigopersona;
     }
