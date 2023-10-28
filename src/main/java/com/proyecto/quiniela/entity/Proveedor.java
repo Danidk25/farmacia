@@ -25,10 +25,18 @@ public class Proveedor implements Serializable {
     @Column(name = "fechaproveedor")
 	private Date fechaproveedor;
     
-   /*  @ManyToOne
-    @JoinColumn(name = "codigopersona")
-    private Persona persona; */
+     @Column(name = "codigopersona")
+	private Integer codigopersona;
 
+
+
+    public Integer getCodigopersona() {
+        return codigopersona;
+    }
+
+    public void setCodigopersona(Integer codigopersona) {
+        this.codigopersona = codigopersona;
+    }
 
     public Integer getCodigoproveedor() {
         return codigoproveedor;

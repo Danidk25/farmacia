@@ -31,11 +31,24 @@ public class Empleado implements Serializable{
 
      @Column(name = "fechaegreso")
 	private Date fechaegreso;
+    
+    
+     @Column(name = "codigopersona")
+	private Integer codigopersona;
+
 
 
    /*  @ManyToOne
     @JoinColumn(name = "codigopersona")
     private Persona persona; */
+
+    public Integer getCodigopersona() {
+        return codigopersona;
+    }
+
+    public void setCodigopersona(Integer codigopersona) {
+        this.codigopersona = codigopersona;
+    }
 
     public Integer getCodigoempleado() {
         return codigoempleado;

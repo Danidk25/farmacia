@@ -16,8 +16,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.proyecto.quiniela.entity.UsuarioL;
 import com.proyecto.quiniela.entity.Persona;
 import com.proyecto.quiniela.entity.Cliente;
-//import com.proyecto.quiniela.entity.Empleado;
-//import com.proyecto.quiniela.entity.Proveedor;
+import com.proyecto.quiniela.entity.Empleado;
+import com.proyecto.quiniela.entity.Proveedor;
 import com.proyecto.quiniela.repository.UsuarioLRepository;
 import com.proyecto.quiniela.repository.PersonaRepository;
 import com.proyecto.quiniela.repository.ProveedorRepository;
@@ -136,7 +136,7 @@ public class AdministradorService {
 	}  */
 	
 
-/* 		// CONSULTAS PARA EMPLEADO
+ 		// CONSULTAS PARA EMPLEADO
 
 	 @GetMapping(path = "/bempleado") // ABC -> C -> consultar Empleado
 	public List<Empleado> bempleado() {
@@ -145,7 +145,7 @@ public class AdministradorService {
 
 	@GetMapping(path = "/bempleadoasc") // ABC -> C -> consultar Empleado
 	public List<Empleado> bempleadoasc() {
-		return empleadoRepository.findAllByOrderByCodigoEmpleadoAsc();
+		return empleadoRepository.findAllByOrderByCodigoempleadoAsc();
 	}
 
 	@PostMapping(path = "/aempleado") // ABC -> A -> Agregar Empleado
@@ -184,7 +184,6 @@ public class AdministradorService {
 			proveedorRepository.delete(proveedor.get());
 		}
 	}   
- */
 
 
 
