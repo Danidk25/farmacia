@@ -194,7 +194,7 @@ public class AdministradorService {
 
 	@GetMapping(path = "/bbitacora") // ABC -> C -> consultar bitacora
 	public List<Bitacora> bbitacora() {
-		return bitacoraRepository.findAll();
+		return bitacoraRepository.findAllByOrderByIdbitacoraAsc();
 	}
 
 

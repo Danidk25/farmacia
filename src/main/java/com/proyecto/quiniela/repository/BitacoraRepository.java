@@ -10,6 +10,6 @@ import com.proyecto.quiniela.entity.Bitacora;
 
 @Repository("BitacoraRepository")
 public interface BitacoraRepository extends JpaRepository<Bitacora, Serializable>{
-    List<Bitacora> findAllByOrderByIdbitacora();
+    List<Bitacora> findAllByOrderByIdbitacoraAsc();
     List<Bitacora> findByIdbitacora(Integer idbitacora);
 }
