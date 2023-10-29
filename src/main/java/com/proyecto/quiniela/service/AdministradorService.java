@@ -18,11 +18,13 @@ import com.proyecto.quiniela.entity.Persona;
 import com.proyecto.quiniela.entity.Cliente;
 import com.proyecto.quiniela.entity.Empleado;
 import com.proyecto.quiniela.entity.Proveedor;
+import com.proyecto.quiniela.entity.Bitacora;
 import com.proyecto.quiniela.repository.UsuarioLRepository;
 import com.proyecto.quiniela.repository.PersonaRepository;
 import com.proyecto.quiniela.repository.ProveedorRepository;
 import com.proyecto.quiniela.repository.ClienteRepository;
 import com.proyecto.quiniela.repository.EmpleadoRepository;
+import com.proyecto.quiniela.repository.BitacoraRepository;
 
 
 
@@ -40,6 +42,8 @@ public class AdministradorService {
 	EmpleadoRepository empleadoRepository;
 	@Autowired
 	ProveedorRepository proveedorRepository;
+	@Autowired
+	BitacoraRepository bitacoraRepository;
 
 	
 
@@ -186,6 +190,12 @@ public class AdministradorService {
 	}   
 
 
+//CONSULTAS DE BITACORA
+
+	@GetMapping(path = "/bbitacora") // ABC -> C -> consultar bitacora
+	public List<Bitacora> bbitacora() {
+		return bitacoraRepository.findAll();
+	}
 
 
 
