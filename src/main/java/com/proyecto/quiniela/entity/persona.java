@@ -67,7 +67,10 @@ public class Persona implements Serializable{
 
     @Column(name = "nombrepais")
 	private String nombrepais;
-
+/*
+ @OneToMany(mappedBy = "codigopersona")
+    private List<Cliente> clientes;
+ */
   
     public Integer getCodigopersona() {
         return codigopersona;
