@@ -29,27 +29,27 @@ public class Bitacora implements Serializable {
     @Column(name = "llaveprimaria")
     private String llaveprimaria;
 
-    @Column(name = "valoranterior", length = 255)
+    @Column(name = "valoranterior")
     private String valoranterior;
 
-    @Column(name = "valornuevo", length = 255)
+    @Column(name = "valornuevo")
     private String valornuevo;
 
     @Column(name = "fechacreacion")
     private Date fechacreacion;
 
-    @Column(name = "usuariocreacion", length = 50)
+    @Column(name = "usuariocreacion")
     private String usuariocreacion;
 
-    @Column(name = "tipomovimiento", length = 40)
+    @Column(name = "tipomovimiento")
     private String tipomovimiento;
 
-    @Column(name = "ipregistro", length = 50)
+        @Column(name = "ipregistro")
     private String ipregistro;
 
 
     public Integer getIdbitacora() {
-        return this.idbitacora;
+        return idbitacora;
     }
 
     public void setIdbitacora(Integer idbitacora) {
@@ -57,7 +57,7 @@ public class Bitacora implements Serializable {
     }
 
     public String getTabla() {
-        return this.tabla;
+        return tabla;
     }
 
     public void setTabla(String tabla) {
@@ -65,7 +65,7 @@ public class Bitacora implements Serializable {
     }
 
     public String getCampo() {
-        return this.campo;
+        return campo;
     }
 
     public void setCampo(String campo) {
@@ -73,7 +73,7 @@ public class Bitacora implements Serializable {
     }
 
     public String getLlaveprimaria() {
-        return this.llaveprimaria;
+        return llaveprimaria;
     }
 
     public void setLlaveprimaria(String llaveprimaria) {
@@ -81,7 +81,7 @@ public class Bitacora implements Serializable {
     }
 
     public String getValoranterior() {
-        return this.valoranterior;
+        return valoranterior;
     }
 
     public void setValoranterior(String valoranterior) {
@@ -89,7 +89,7 @@ public class Bitacora implements Serializable {
     }
 
     public String getValornuevo() {
-        return this.valornuevo;
+        return valornuevo;
     }
 
     public void setValornuevo(String valornuevo) {
@@ -97,7 +97,7 @@ public class Bitacora implements Serializable {
     }
 
     public Date getFechacreacion() {
-        return this.fechacreacion;
+        return fechacreacion;
     }
 
     public void setFechacreacion(Date fechacreacion) {
@@ -105,7 +105,7 @@ public class Bitacora implements Serializable {
     }
 
     public String getUsuariocreacion() {
-        return this.usuariocreacion;
+        return usuariocreacion;
     }
 
     public void setUsuariocreacion(String usuariocreacion) {
@@ -113,7 +113,7 @@ public class Bitacora implements Serializable {
     }
 
     public String getTipomovimiento() {
-        return this.tipomovimiento;
+        return tipomovimiento;
     }
 
     public void setTipomovimiento(String tipomovimiento) {
@@ -121,12 +121,14 @@ public class Bitacora implements Serializable {
     }
 
     public String getIpregistro() {
-        return this.ipregistro;
+        return ipregistro;
     }
 
     public void setIpregistro(String ipregistro) {
         this.ipregistro = ipregistro;
     }
+
+
     
 
 }
