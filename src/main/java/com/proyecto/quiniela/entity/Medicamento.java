@@ -21,13 +21,13 @@ public class Medicamento implements Serializable {
     @Column(name = "codigomedicamento")
 	private Integer codigomedicamento;
 
-@Column(name = "lote", length = 30)
+    @Column(name = "lote")
     private String lote;
 
-    @Column(name = "nombrecomercial",  length = 60)
+    @Column(name = "nombrecomercial")
     private String nombrecomercial;
 
-    @Column(name = "estado",  length = 20)
+    @Column(name = "estado")
     private String estado;
 
     @Column(name = "unidaddemedida")
@@ -54,12 +54,11 @@ public class Medicamento implements Serializable {
     @Column(name = "costocompra", precision = 10, scale = 2)
     private BigDecimal costocompra;
     
-    @Column(name = "principioactivo", length = 20)
+    @Column(name = "principioactivo")
     private String principioactivo;
 
-
     public Integer getCodigomedicamento() {
-        return this.codigomedicamento;
+        return codigomedicamento;
     }
 
     public void setCodigomedicamento(Integer codigomedicamento) {
@@ -67,7 +66,7 @@ public class Medicamento implements Serializable {
     }
 
     public String getLote() {
-        return this.lote;
+        return lote;
     }
 
     public void setLote(String lote) {
@@ -75,7 +74,7 @@ public class Medicamento implements Serializable {
     }
 
     public String getNombrecomercial() {
-        return this.nombrecomercial;
+        return nombrecomercial;
     }
 
     public void setNombrecomercial(String nombrecomercial) {
@@ -83,7 +82,7 @@ public class Medicamento implements Serializable {
     }
 
     public String getEstado() {
-        return this.estado;
+        return estado;
     }
 
     public void setEstado(String estado) {
@@ -91,7 +90,7 @@ public class Medicamento implements Serializable {
     }
 
     public Integer getUnidaddemedida() {
-        return this.unidaddemedida;
+        return unidaddemedida;
     }
 
     public void setUnidaddemedida(Integer unidaddemedida) {
@@ -99,7 +98,7 @@ public class Medicamento implements Serializable {
     }
 
     public Integer getProporcion() {
-        return this.proporcion;
+        return proporcion;
     }
 
     public void setProporcion(Integer proporcion) {
@@ -107,7 +106,7 @@ public class Medicamento implements Serializable {
     }
 
     public Date getFechacreacion() {
-        return this.fechacreacion;
+        return fechacreacion;
     }
 
     public void setFechacreacion(Date fechacreacion) {
@@ -115,7 +114,7 @@ public class Medicamento implements Serializable {
     }
 
     public Date getFechaingreso() {
-        return this.fechaingreso;
+        return fechaingreso;
     }
 
     public void setFechaingreso(Date fechaingreso) {
@@ -123,7 +122,7 @@ public class Medicamento implements Serializable {
     }
 
     public Date getFechavencimiento() {
-        return this.fechavencimiento;
+        return fechavencimiento;
     }
 
     public void setFechavencimiento(Date fechavencimiento) {
@@ -131,7 +130,7 @@ public class Medicamento implements Serializable {
     }
 
     public Integer getExistencia() {
-        return this.existencia;
+        return existencia;
     }
 
     public void setExistencia(Integer existencia) {
@@ -139,7 +138,7 @@ public class Medicamento implements Serializable {
     }
 
     public BigDecimal getCostoventa() {
-        return this.costoventa;
+        return costoventa;
     }
 
     public void setCostoventa(BigDecimal costoventa) {
@@ -147,7 +146,7 @@ public class Medicamento implements Serializable {
     }
 
     public BigDecimal getCostocompra() {
-        return this.costocompra;
+        return costocompra;
     }
 
     public void setCostocompra(BigDecimal costocompra) {
@@ -155,13 +154,11 @@ public class Medicamento implements Serializable {
     }
 
     public String getPrincipioactivo() {
-        return this.principioactivo;
+        return principioactivo;
     }
 
     public void setPrincipioactivo(String principioactivo) {
         this.principioactivo = principioactivo;
     }
-
-    
 
 }

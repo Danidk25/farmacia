@@ -18,6 +18,7 @@ import com.proyecto.quiniela.entity.Persona;
 import com.proyecto.quiniela.entity.Cliente;
 import com.proyecto.quiniela.entity.Empleado;
 import com.proyecto.quiniela.entity.Factura;
+import com.proyecto.quiniela.entity.Medicamento;
 import com.proyecto.quiniela.entity.Proveedor;
 import com.proyecto.quiniela.entity.Bitacora;
 import com.proyecto.quiniela.repository.UsuarioLRepository;
@@ -28,6 +29,7 @@ import com.proyecto.quiniela.repository.EmpleadoRepository;
 import com.proyecto.quiniela.repository.BitacoraRepository;
 import com.proyecto.quiniela.repository.DevolucionesRepository;
 import com.proyecto.quiniela.repository.FacturaRepository;
+import com.proyecto.quiniela.repository.MedicamentoRepository;
 
 
 
@@ -51,7 +53,9 @@ public class AdministradorService {
 	DevolucionesRepository devolucionesRepository;
 	@Autowired
 	FacturaRepository facturaRepository;
-	
+	@Autowired
+	MedicamentoRepository medicamentoRepository;
+
 
 	// USUARIOS PARA EL LOGIN PROYECTO BD 1
 	@PostMapping(path = "/loginul") // ABC -> A -> AgregarAdm LoginBueno para UsuarioL
@@ -222,6 +226,26 @@ public class AdministradorService {
 		Optional<Factura> factura = facturaRepository.findById(codigofactura);
 		if (factura.isPresent()) {
 			facturaRepository.delete(factura.get());
+		}
+	}
+
+//consultar medicamentos
+
+	@GetMapping(path = "/bmedicamento") // ABC -> C -> consultar medicamento
+	public List<Medicamento> bmedicamento() {
+		return medicamentoRepository.findAll();
+	}
+
+	@PostMapping(path = "/amedicamento") // ABC -> A -> agregar medicamento
+	public Medicamento amedicamento(@RequestBody Medicamento medicamento) {
+		return medicamentoRepository.save(medicamento);
+	}
+
+	@DeleteMapping(path = "/eliminarmed/{codigomedicamento}") //ABC -> B -> borrar medicamento
+	public void eliminarmed(@PathVariable("codigomedicamento") int codigomedicamento) {
+		Optional<Medicamento> medicamento = medicamentoRepository.findById(codigomedicamento);
+		if (medicamento.isPresent()) {
+			medicamentoRepository.delete(medicamento.get());
 		}
 	}
 
