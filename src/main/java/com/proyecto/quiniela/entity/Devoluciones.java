@@ -1,5 +1,6 @@
 package com.proyecto.quiniela.entity;
 import java.io.Serializable;
+import java.util.Date;
 
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -18,4 +19,6 @@ public class Devoluciones implements Serializable {
 	@Basic(optional = false)
     @Column(name = "codigodevolucion")
 	private Integer codigodevolucion;
+     @Column(name = "fechadevolucion")
+	private Date fechadevolucion;
 }

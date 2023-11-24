@@ -17,6 +17,7 @@ import com.proyecto.quiniela.entity.UsuarioL;
 import com.proyecto.quiniela.entity.Persona;
 import com.proyecto.quiniela.entity.Cliente;
 import com.proyecto.quiniela.entity.Empleado;
+import com.proyecto.quiniela.entity.Factura;
 import com.proyecto.quiniela.entity.Proveedor;
 import com.proyecto.quiniela.entity.Bitacora;
 import com.proyecto.quiniela.repository.UsuarioLRepository;
@@ -25,6 +26,8 @@ import com.proyecto.quiniela.repository.ProveedorRepository;
 import com.proyecto.quiniela.repository.ClienteRepository;
 import com.proyecto.quiniela.repository.EmpleadoRepository;
 import com.proyecto.quiniela.repository.BitacoraRepository;
+import com.proyecto.quiniela.repository.DevolucionesRepository;
+import com.proyecto.quiniela.repository.FacturaRepository;
 
 
 
@@ -44,7 +47,10 @@ public class AdministradorService {
 	ProveedorRepository proveedorRepository;
 	@Autowired
 	BitacoraRepository bitacoraRepository;
-
+	@Autowired 
+	DevolucionesRepository devolucionesRepository;
+	@Autowired
+	FacturaRepository facturaRepository;
 	
 
 	// USUARIOS PARA EL LOGIN PROYECTO BD 1
@@ -198,8 +204,26 @@ public class AdministradorService {
 	}
 
 
+//FACTURA 
+	//consultar factura
 
+	@GetMapping(path = "/bfactura") // ABC -> C -> consultar factura
+	public List<Factura> bfactura() {
+		return facturaRepository.findAll();
+	}
 
+	@PostMapping(path = "/afactura") // ABC -> A -> agregar factura
+	public Factura afactura(@RequestBody Factura factura) {
+		return facturaRepository.save(factura);
+	}
+
+	@DeleteMapping(path = "/eliminarfactura/{codigofactura}") //ABC -> B -> borrar factura
+	public void eliminafactura(@PathVariable("codigofactura") int codigofactura) {
+		Optional<Factura> factura = facturaRepository.findById(codigofactura);
+		if (factura.isPresent()) {
+			facturaRepository.delete(factura.get());
+		}
+	}
 
 
 
