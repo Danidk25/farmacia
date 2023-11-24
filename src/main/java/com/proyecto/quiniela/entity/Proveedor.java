@@ -22,21 +22,26 @@ public class Proveedor implements Serializable {
     @Column(name = "codigoproveedor")
 	private Integer codigoproveedor;
     
+    @Column(name = "primernombre")
+	private String primernombre;
+
+    @Column(name = "segundonombre")
+	private String segundonombre;
+
+    @Column(name = "primerapellido")
+	private String primerapellido;
+
+    @Column(name = "segundoapellido")
+	private String segundoapellido;
+
+    @Column(name = "nit")
+	private Integer nit;
+
+    @Column(name = "numerotelefono")
+	private Integer numerotelefono;
+
     @Column(name = "fechaproveedor")
 	private Date fechaproveedor;
-    
-     @Column(name = "codigopersona")
-	private Integer codigopersona;
-
-
-
-    public Integer getCodigopersona() {
-        return codigopersona;
-    }
-
-    public void setCodigopersona(Integer codigopersona) {
-        this.codigopersona = codigopersona;
-    }
 
     public Integer getCodigoproveedor() {
         return codigoproveedor;
@@ -44,6 +49,54 @@ public class Proveedor implements Serializable {
 
     public void setCodigoproveedor(Integer codigoproveedor) {
         this.codigoproveedor = codigoproveedor;
+    }
+
+    public String getPrimernombre() {
+        return primernombre;
+    }
+
+    public void setPrimernombre(String primernombre) {
+        this.primernombre = primernombre;
+    }
+
+    public String getSegundonombre() {
+        return segundonombre;
+    }
+
+    public void setSegundonombre(String segundonombre) {
+        this.segundonombre = segundonombre;
+    }
+
+    public String getPrimerapellido() {
+        return primerapellido;
+    }
+
+    public void setPrimerapellido(String primerapellido) {
+        this.primerapellido = primerapellido;
+    }
+
+    public String getSegundoapellido() {
+        return segundoapellido;
+    }
+
+    public void setSegundoapellido(String segundoapellido) {
+        this.segundoapellido = segundoapellido;
+    }
+
+    public Integer getNit() {
+        return nit;
+    }
+
+    public void setNit(Integer nit) {
+        this.nit = nit;
+    }
+
+    public Integer getNumerotelefono() {
+        return numerotelefono;
+    }
+
+    public void setNumerotelefono(Integer numerotelefono) {
+        this.numerotelefono = numerotelefono;
     }
 
     public Date getFechaproveedor() {
@@ -54,7 +107,4 @@ public class Proveedor implements Serializable {
         this.fechaproveedor = fechaproveedor;
     }
 
- 
-
-    
 }

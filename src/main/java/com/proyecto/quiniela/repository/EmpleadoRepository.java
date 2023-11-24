@@ -12,8 +12,6 @@ import com.proyecto.quiniela.entity.Empleado;
 @Repository("EmpleadoRepository")
 public interface EmpleadoRepository extends JpaRepository<Empleado, Serializable>{
    List<Empleado> findAllByOrderByCodigoempleado();
-    List<Empleado> findAllByOrderByCodigoempleadoAsc();
     List<Empleado>findByCodigoempleado(Integer codigoempleado);
-   // List<Empleado> findByCodigopersona(Integer codigopersona); 
-
+   
 }

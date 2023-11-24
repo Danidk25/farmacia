@@ -157,10 +157,6 @@ public class AdministradorService {
 		return empleadoRepository.findAll();
 	}
 
-	@GetMapping(path = "/bempleadoasc") // ABC -> C -> consultar Empleado
-	public List<Empleado> bempleadoasc() {
-		return empleadoRepository.findAllByOrderByCodigoempleadoAsc();
-	}
 
 	@PostMapping(path = "/aempleado") // ABC -> A -> Agregar Empleado
 	public Empleado aempleado(@RequestBody Empleado empleado) {
@@ -175,8 +171,11 @@ public class AdministradorService {
 		}
 	}   
 
-// CONSULTAS PARA PROVEEDOR
- 	  @GetMapping(path = "/bproveedor") // ABC -> C -> consultar clientes
+
+  
+
+//proveedor
+	@GetMapping(path = "/bproveedor") // ABC -> C -> consultar clientes
 	public List<Proveedor> bproveedor() {
 		return proveedorRepository.findAll();
 	}
@@ -197,7 +196,9 @@ public class AdministradorService {
 		if (proveedor.isPresent()) {
 			proveedorRepository.delete(proveedor.get());
 		}
-	}   
+	}
+
+
 
 
 //CONSULTAS DE BITACORA
