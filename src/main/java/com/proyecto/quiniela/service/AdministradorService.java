@@ -21,6 +21,7 @@ import com.proyecto.quiniela.entity.Factura;
 import com.proyecto.quiniela.entity.Medicamento;
 import com.proyecto.quiniela.entity.Proveedor;
 import com.proyecto.quiniela.entity.Bitacora;
+import com.proyecto.quiniela.entity.Devoluciones;
 import com.proyecto.quiniela.repository.UsuarioLRepository;
 import com.proyecto.quiniela.repository.PersonaRepository;
 import com.proyecto.quiniela.repository.ProveedorRepository;
@@ -250,8 +251,25 @@ public class AdministradorService {
 		}
 	}
 
+//devoluciones
 
+@GetMapping(path = "/bdevolucion") // ABC -> C -> consultar devoluciones
+	public List<Devoluciones> bdevolucion() {
+		return devolucionesRepository.findAll();
+	}
 
+	@PostMapping(path = "/adevolucion") // ABC -> A -> Agregar devoluciones
+	public Devoluciones adevolucion(@RequestBody Devoluciones devolucion) {
+		return devolucionesRepository.save(devolucion);
+	}
+
+@DeleteMapping(path = "/eliminardev/{codigodevolucion}") // ABC -> B ->Borrar devoluciones
+	public void eliminardev(@PathVariable("codigodevolucion") int codigodevolucion) {
+		Optional<Devoluciones> devoluciones = devolucionesRepository.findById(codigodevolucion);
+		if (devoluciones.isPresent()) {
+			devolucionesRepository.delete(devoluciones.get());
+		}
+	}  
 
 
 
