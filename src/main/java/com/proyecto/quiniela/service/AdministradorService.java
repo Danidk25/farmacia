@@ -22,14 +22,18 @@ import com.proyecto.quiniela.entity.Medicamento;
 import com.proyecto.quiniela.entity.Proveedor;
 import com.proyecto.quiniela.entity.Bitacora;
 import com.proyecto.quiniela.entity.Devoluciones;
+import com.proyecto.quiniela.entity.Sucursal;
+import com.proyecto.quiniela.entity.Laboratorio;
 import com.proyecto.quiniela.repository.UsuarioLRepository;
 import com.proyecto.quiniela.repository.PersonaRepository;
 import com.proyecto.quiniela.repository.ProveedorRepository;
+import com.proyecto.quiniela.repository.SucursalRepository;
 import com.proyecto.quiniela.repository.ClienteRepository;
 import com.proyecto.quiniela.repository.EmpleadoRepository;
 import com.proyecto.quiniela.repository.BitacoraRepository;
 import com.proyecto.quiniela.repository.DevolucionesRepository;
 import com.proyecto.quiniela.repository.FacturaRepository;
+import com.proyecto.quiniela.repository.LaboratorioRepository;
 import com.proyecto.quiniela.repository.MedicamentoRepository;
 
 
@@ -56,6 +60,11 @@ public class AdministradorService {
 	FacturaRepository facturaRepository;
 	@Autowired
 	MedicamentoRepository medicamentoRepository;
+	@Autowired
+	SucursalRepository sucursalRepository;
+	@Autowired
+	LaboratorioRepository laboratorioRepository;
+
 
 
 	// USUARIOS PARA EL LOGIN PROYECTO BD 1
@@ -270,6 +279,50 @@ public class AdministradorService {
 			devolucionesRepository.delete(devoluciones.get());
 		}
 	}  
+
+
+		//consultar laboratorio
+
+		@GetMapping(path = "/blaboratorio") // ABC -> C -> consultar laboratorio
+		public List<Laboratorio> blaboratorio() {
+			return laboratorioRepository.findAll();
+		}
+	
+		@PostMapping(path = "/alaboratorio") // ABC -> A -> agregar laboratorio
+		public Laboratorio laboratorio(@RequestBody Laboratorio laboratorio) {
+			return laboratorioRepository.save(laboratorio);
+		}
+	
+		@DeleteMapping(path = "/eliminarlaboratorio/{codigolaboratorio}") //ABC -> B -> borrar laboratorio
+		public void eliminalaboratorio(@PathVariable("codigolaboratorio") int codigolaboratorio) {
+			Optional<Laboratorio> laboratorio = laboratorioRepository.findById(codigolaboratorio);
+			if (laboratorio.isPresent()) {
+				laboratorioRepository.delete(laboratorio.get());
+			}
+		}
+	
+	
+		
+		//consultar sucursal
+	
+		@GetMapping(path = "/bsucursal") // ABC -> C -> consultar sucursal
+		public List<Sucursal> bsucursal() {
+			return sucursalRepository.findAll();
+		}
+	
+		@PostMapping(path = "/asucursal") // ABC -> A -> agregar sucursal
+		public Sucursal asucursal(@RequestBody Sucursal sucursal) {
+			return sucursalRepository.save(sucursal);
+		}
+	
+		@DeleteMapping(path = "/eliminarsucursal/{codigosucursal}") //ABC -> B -> borrar sucursal
+		public void eliminasucursal(@PathVariable("codigosucursal") int codigosucursal) {
+			Optional<Sucursal> sucursal = sucursalRepository.findById(codigosucursal);
+			if (sucursal.isPresent()) {
+				sucursalRepository.delete(sucursal.get());
+			}
+		}
+	
 
 
 

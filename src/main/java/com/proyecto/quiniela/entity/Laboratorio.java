@@ -19,6 +19,9 @@ public class Laboratorio implements Serializable {
     @Column(name = "codigolaboratorio")
 	private Integer codigolaboratorio;
 
+    @Column(name = "ubicacionlaboratorio", length = 100)
+    private String ubicacionlaboratorio;
+
     @Column(name = "nombrelaboratorio", length = 100)
     private String nombrelaboratorio;
 
@@ -26,15 +29,23 @@ public class Laboratorio implements Serializable {
     private String encargadolaboratorio;
 
     public Integer getCodigolaboratorio() {
-        return this.codigolaboratorio;
+        return codigolaboratorio;
     }
 
     public void setCodigolaboratorio(Integer codigolaboratorio) {
         this.codigolaboratorio = codigolaboratorio;
     }
 
+    public String getUbicacionlaboratorio() {
+        return ubicacionlaboratorio;
+    }
+
+    public void setUbicacionlaboratorio(String ubicacionlaboratorio) {
+        this.ubicacionlaboratorio = ubicacionlaboratorio;
+    }
+
     public String getNombrelaboratorio() {
-        return this.nombrelaboratorio;
+        return nombrelaboratorio;
     }
 
     public void setNombrelaboratorio(String nombrelaboratorio) {
@@ -42,11 +53,13 @@ public class Laboratorio implements Serializable {
     }
 
     public String getEncargadolaboratorio() {
-        return this.encargadolaboratorio;
+        return encargadolaboratorio;
     }
 
     public void setEncargadolaboratorio(String encargadolaboratorio) {
         this.encargadolaboratorio = encargadolaboratorio;
     }
 
+    
 }
+
